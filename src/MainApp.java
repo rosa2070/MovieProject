@@ -2,11 +2,11 @@ import dto.UserDto;
 
 import javax.swing.*;
 
-public class MainAPP extends JFrame{
+public class MainApp extends JFrame{
     private JLabel userNameLabel;
     private JPanel mainPanel;
 
-    public MainAPP(UserDto userDto){
+    public MainApp(UserDto userDto){
         setContentPane(mainPanel);
         setTitle("로그인 화면");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

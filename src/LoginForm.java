@@ -29,7 +29,7 @@ public class LoginForm extends JFrame{
                 isSuccess = userDao.login(idTextField.getText(), passwordTextField.getText());
 
                 if (isSuccess){
-                    MainAPP mainAPP = new MainAPP(userDao.getUserDto());
+                    MainApp mainAPP = new MainApp(userDao.getUserDto());
                 }
             }
         });
