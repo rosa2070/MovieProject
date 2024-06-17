@@ -1,12 +1,12 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Signup extends JDialog {
+public class SignUpDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
 
-    public Signup() {
+    public SignUpDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -50,7 +50,7 @@ public class Signup extends JDialog {
     }
 
     public static void main(String[] args) {
-        Signup dialog = new Signup();
+        SignUpDialog dialog = new SignUpDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

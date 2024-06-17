@@ -36,8 +36,8 @@ public class LoginForm extends JFrame{
         SignUpButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-
+                SignUpApp signup = new SignUpApp();
+                signup.setVisible(true);
             }
         });
     }
