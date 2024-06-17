@@ -5,6 +5,11 @@ public class SignUpDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JTextField idTextField;
+    private JPanel mainPanel;
+    private JTextField passwordTextField;
+    private JTextField nameTextField;
+    private JButton signUpButton;
 
     public SignUpDialog() {
         setContentPane(contentPane);
