@@ -1,3 +1,5 @@
+import dao.UserDao;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -42,6 +44,18 @@ public class SignUpDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        signUpButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                UserDao userDao = new UserDao();
+                boolean isSuccess = false;
+                isSuccess = userDao.signUp(idTextField.getText(), passwordTextField.getText(), nameTextField.getText());
+
+                if (isSuccess) {
+                    MainApp mainApp = new MainApp(userDao.getUserDto());
+                }
+            }
+        });
     }
 
     private void onOK() {

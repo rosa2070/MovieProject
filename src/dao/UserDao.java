@@ -48,6 +48,32 @@ public class UserDao {
         }
         return isSuccess;
     }
+
+    public boolean signUp(String id, String password, String name) {
+        boolean isSuccess = false;
+        PreparedStatement pstmt = null;
+        String sql = "INSERT INTO user (user_id, user_password, user_name) VALUES (?, ?, ?);";
+        try {
+            pstmt = this.conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            pstmt.setString(2, password);
+            pstmt.setString(3, name);
+
+            int rowInserted = pstmt.executeUpdate();
+            if (rowInserted > 0) {
+                System.out.println("new user added");
+                isSuccess = true;
+            } else {
+                isSuccess = false;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return isSuccess;
+
+    }
+
+
     public UserDto getUserDto() {
         return userDto;
     }
